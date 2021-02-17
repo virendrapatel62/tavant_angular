@@ -1,5 +1,9 @@
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Register } from '../models/register';
+import { AuthService } from '../services/auth.service';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +13,11 @@ import { Register } from '../models/register';
 export class RegisterComponent implements OnInit {
   register: Register = new Register();
 
-  constructor() {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private tokenService: TokenService
+  ) {
     this.register.email = `virendra${Math.floor(
       Math.random() * 1000
     )}@gmail.com`;
@@ -21,6 +29,15 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   submitForm() {
-    console.log(this.register);
+    this.authService.registerUser(this.register).subscribe({
+      next: (res: any) => {
+        console.log(res);
+        this.tokenService.saveTokenToLocalStorage(res.token);
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }
