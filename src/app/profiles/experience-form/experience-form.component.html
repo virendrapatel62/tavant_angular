@@ -1,0 +1,38 @@
+<h1 class='large text-primary'>Add An Experience</h1>
+<p class='lead'>
+    <i class='fas fa-code-branch'></i> Add any
+    developer/programming positions that you have had in the past
+</p>
+<small>* = required field</small>
+<form class='form'>
+    <div class='form-group mt-2'>
+        <input class="form-control" type='text' placeholder='* Job Title' name='title' required />
+    </div>
+    <div class='form-group mt-2'>
+        <input class="form-control" type='text' placeholder='* Company' name='company' required />
+    </div>
+    <div class='form-group mt-2'>
+        <input class="form-control" type='text' placeholder='Location' name='location' />
+    </div>
+    <div class='form-group mt-2'>
+        <h4>From Date</h4>
+        <input class="form-control" type='date' name='from' value={from} />
+    </div>
+    <div class='form-group mt-2'>
+        <p>
+            <input class="form-control" type='checkbox' name='current' />
+            Current Job
+        </p>
+    </div>
+    <div class='form-group mt-2'>
+        <h4>To Date</h4>
+        <input class="form-control" type='date' name='to' />
+    </div>
+    <div class='form-group mt-2'>
+        <textarea class="form-control" name='description' cols='30' rows='5' placeholder='Job Description'></textarea>
+    </div>
+    <input class="form-control" type='submit' class='btn btn-primary my-1' />
+    <a class='btn btn-light my-1' routerLink='/dashboard'>
+        Go Back
+    </a>
+</form>
