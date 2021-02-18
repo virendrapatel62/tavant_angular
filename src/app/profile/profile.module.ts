@@ -8,13 +8,17 @@ import { ProfileEducationComponent } from './profile-education/profile-education
 import { ProfileExperienceComponent } from './profile-experience/profile-experience.component';
 import { ProfileGithubComponent } from './profile-github/profile-github.component';
 import { ProfileTopComponent } from './profile-top/profile-top.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ProfileComponent, ProfileAboutComponent, ProfileEducationComponent, ProfileExperienceComponent, ProfileGithubComponent, ProfileTopComponent],
-  imports: [
-    CommonModule,
-    ProfileRoutingModule
-  ]
+  declarations: [
+    ProfileComponent,
+    ProfileAboutComponent,
+    ProfileEducationComponent,
+    ProfileExperienceComponent,
+    ProfileGithubComponent,
+    ProfileTopComponent,
+  ],
+  imports: [CommonModule, ProfileRoutingModule],
 })
-export class ProfileModule { }
+export class ProfileModule {}

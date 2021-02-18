@@ -1,6 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/core/services/alert.service';
 import { Login } from '../models/login';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {
     this.login.email = 'virendra77@gmail.com';
     this.login.password = '1234567890';
@@ -32,6 +34,10 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(['/dashboard']);
         this.tokenService.saveTokenToLocalStorage(res.token);
+        this.alertService.setAlert({
+          alertType: 'success',
+          message: 'Login Success',
+        });
       },
       error: (err) => {
         console.log(err);
