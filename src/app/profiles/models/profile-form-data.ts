@@ -13,3 +13,23 @@ export class ProfileFormData {
   linkedin?: string;
   instagram?: string;
 }
+
+export class Experience {
+  current?: boolean;
+  title?: string;
+  company?: string;
+  location?: string;
+  from?: Date;
+  to?: Date;
+  description?: string;
+}
+
+export class Education {
+  current?: boolean;
+  school?: string;
+  degree?: string;
+  fieldofstudy?: string;
+  from?: string;
+  to?: any;
+  description?: string;
+}
