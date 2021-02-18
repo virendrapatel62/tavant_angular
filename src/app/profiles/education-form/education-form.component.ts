@@ -30,6 +30,11 @@ export class EducationFormComponent implements OnInit {
     this.profileService.addEducation(this.education).subscribe({
       next: (res) => {
         console.log(res);
+        this.alertService.setAlert({
+          alertType: 'success',
+          message: 'Education Added',
+        });
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         console.log(err);
