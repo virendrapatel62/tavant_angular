@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table" *ngIf='profile && profile.experience'>
     <thead>
         <tr>
             <th>Title</th>
@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let ex of profile?.experience'>
+        <tr *ngFor='let ex of profile.experience'>
             <td scope="row">{{ex.title}}</td>
             <td scope="row">{{ex.company}}</td>
             <td scope="row">{{ex.from|date}}</td>

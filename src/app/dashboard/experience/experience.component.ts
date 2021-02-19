@@ -8,7 +8,7 @@ import { Profile } from 'src/app/profile/models/profile';
 })
 export class ExperienceComponent implements OnInit {
   @Input()
-  profile?: Profile;
+  profile: Profile;
 
   constructor() {}
 
