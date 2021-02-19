@@ -6,13 +6,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardActionsComponent } from './dashboard-actions/dashboard-actions.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
-
+import { httpInterceptorProviders } from '../core/interceptors';
+import { ProfileCrudService } from '../profiles/services/profile-crud.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [DashboardComponent, DashboardActionsComponent, EducationComponent, ExperienceComponent],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule
-  ]
+  declarations: [
+    DashboardComponent,
+    DashboardActionsComponent,
+    EducationComponent,
+    ExperienceComponent,
+  ],
+  imports: [CommonModule, DashboardRoutingModule, HttpClientModule],
+  providers: [httpInterceptorProviders, ProfileCrudService],
 })
-export class DashboardModule { }
+export class DashboardModule {}

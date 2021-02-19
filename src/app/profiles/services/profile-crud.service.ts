@@ -15,6 +15,9 @@ export class ProfileCrudService {
   createProfile(profileData: ProfileFormData) {
     return this.http.post('/api/profile', profileData);
   }
+  getMyProfile() {
+    return this.http.get('/api/profile/me');
+  }
 
   addEducation(education: Education) {
     return this.http.put('/api/profile/education', education);
@@ -22,5 +25,12 @@ export class ProfileCrudService {
 
   addExperience(experience: Experience) {
     return this.http.put('/api/profile/experience', experience);
+  }
+  getAllProfiles() {
+    return this.http.get('/api/profile');
+  }
+
+  getProfileById(id: string) {
+    return this.http.get('/api/profile/user/' + id);
   }
 }

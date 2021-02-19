@@ -9,12 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileCrudService } from './services/profile-crud.service';
 import { httpInterceptorProviders } from '../core/interceptors';
+import { AllProfilesComponent } from './all-profiles/all-profiles.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 @NgModule({
   declarations: [
     ProfileFormComponent,
     EducationFormComponent,
     ExperienceFormComponent,
+    AllProfilesComponent,
+    ProfileCardComponent,
   ],
   providers: [ProfileCrudService, httpInterceptorProviders],
   imports: [CommonModule, ProfilesRoutingModule, FormsModule, HttpClientModule],

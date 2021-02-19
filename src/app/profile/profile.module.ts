@@ -9,6 +9,8 @@ import { ProfileExperienceComponent } from './profile-experience/profile-experie
 import { ProfileGithubComponent } from './profile-github/profile-github.component';
 import { ProfileTopComponent } from './profile-top/profile-top.component';
 import { FormsModule } from '@angular/forms';
+import { ProfileCrudService } from '../profiles/services/profile-crud.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     ProfileGithubComponent,
     ProfileTopComponent,
   ],
-  imports: [CommonModule, ProfileRoutingModule],
+  providers: [ProfileCrudService],
+  imports: [CommonModule, ProfileRoutingModule, HttpClientModule],
 })
 export class ProfileModule {}

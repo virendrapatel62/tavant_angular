@@ -2,7 +2,7 @@ import { Education } from './education';
 import { Experience } from './experience';
 import { User } from './user';
 
-export interface Profile {
+export class Profile {
   skills: string[];
   _id: string;
   user: User;
@@ -13,6 +13,7 @@ export interface Profile {
   status: string;
   website: string;
   date: string;
+  social: any;
   education: Education[];
   experience: Experience[];
 }

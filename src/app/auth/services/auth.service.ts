@@ -14,4 +14,7 @@ export class AuthService {
   loginUser(credentials: any) {
     return this.http.post('/api/auth', credentials);
   }
+  getUser() {
+    return this.http.get('/api/auth');
+  }
 }
