@@ -8,6 +8,8 @@ import { LandingComponent } from './components/layout/landing/landing.component'
 import { httpInterceptorProviders } from './interceptors';
 import { AlertComponent } from './components/alert/alert.component';
 import { AlertService } from './services/alert.service';
+import { AuthService } from '../auth/services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,8 @@ import { AlertService } from './services/alert.service';
     LandingComponent,
     AlertComponent,
   ],
-  imports: [CommonModule, CoreRoutingModule],
+  imports: [CommonModule, HttpClientModule, CoreRoutingModule],
   exports: [NavbarComponent, FooterComponent, LandingComponent, AlertComponent],
-  providers: [AlertService, httpInterceptorProviders],
+  providers: [AlertService, httpInterceptorProviders, AuthService],
 })
 export class CoreModule {}

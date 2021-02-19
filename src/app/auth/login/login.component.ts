@@ -24,14 +24,18 @@ export class LoginComponent implements OnInit {
     this.login.password = '1234567890';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.authService.authSubject.next({ action: 'login' });
+    }, 5000);
+  }
 
   loginUser() {
     console.log(this.login);
     this.authService.loginUser(this.login).subscribe({
       next: (res: any) => {
         console.log(res.token);
-
+        this.authService.authSubject.next('login');
         this.router.navigate(['/dashboard']);
         this.tokenService.saveTokenToLocalStorage(res.token);
         this.alertService.setAlert({
