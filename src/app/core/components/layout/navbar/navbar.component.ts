@@ -15,17 +15,16 @@ export class NavbarComponent implements OnInit {
     this.authService.authSubject.subscribe({
       next: (data) => {
         console.log(data);
-        if (data == 'login') {
-          this.status = true;
-        }
+        this.status = data == 'login';
       },
       error: (err) => {
         console.log({ err });
       },
     });
+  }
 
-    setTimeout(() => {
-      this.authService.authSubject.next({ action: 'login' });
-    }, 5000);
+  logout() {
+    this.authService.logout();
+    this.authService.authSubject.next('logout');
   }
 }

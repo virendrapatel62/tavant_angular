@@ -20,6 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [CommonModule, HttpClientModule, CoreRoutingModule],
   exports: [NavbarComponent, FooterComponent, LandingComponent, AlertComponent],
-  providers: [AlertService, httpInterceptorProviders, AuthService],
+  providers: [httpInterceptorProviders],
 })
 export class CoreModule {}

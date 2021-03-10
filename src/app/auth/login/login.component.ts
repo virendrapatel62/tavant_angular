@@ -24,11 +24,7 @@ export class LoginComponent implements OnInit {
     this.login.password = '1234567890';
   }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.authService.authSubject.next({ action: 'login' });
-    }, 5000);
-  }
+  ngOnInit(): void {}
 
   loginUser() {
     console.log(this.login);

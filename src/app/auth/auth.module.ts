@@ -12,7 +12,7 @@ import { TokenService } from './services/token.service';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
-  providers: [AuthService, TokenService, httpInterceptorProviders],
+  providers: [httpInterceptorProviders],
 
   imports: [CommonModule, AuthRoutingModule, FormsModule, HttpClientModule],
 })
